@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <util:properties id="sys" location="WEB-INF/sys.properties"/>
+    <!--<util:properties id="sys" location="sys.properties"/>-->
+
+    <!-- 自动注解扫描，获取Controller目录下的文件 -->
+    <context:component-scan base-package="com.gizwits.demo.wechat"/>
+
+    <!-- 配置视图解析器 将视图逻辑名解析为/page/*.jsp -->
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/pages/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- 配置一个App -->
+    <bean id="gizwitsWechatApp" class="com.gizwits.demo.wechat.common.gizwits.App">
+        <!-- 机智云产品下，应用的app_id -->
+        <property name="app_id" value=""/>
+        <!-- 机智云产品下，应用的app_secret -->
+        <property name="app_secret" value=""/>
+        <!-- 机智云产品的product_key -->
+        <property name="product_key" value=""/>
+        <!-- 机智云产品的product_Secret -->
+        <property name="product_Secret" value=""/>
+    </bean>
+
+</beans>
