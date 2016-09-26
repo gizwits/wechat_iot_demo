@@ -16,13 +16,11 @@
     </properties>
 
     <dependencies>
-        <!-- 暂时尚未上传maven仓，下一版本将会通过maven中央仓库来集成 -->
+        <!-- 机智云的OpenAPI-SDK -->
         <dependency>
-            <groupId>com.gizwits.api</groupId>
-            <artifactId>open-api</artifactId>
-            <version>0.1.1</version>
-            <scope>system</scope>
-            <systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/gizwits-wechat-0.1.1.jar</systemPath>
+            <groupId>com.gizwits.openapi</groupId>
+            <artifactId>openapi-sdk</artifactId>
+            <version>0.2.0</version>
         </dependency>
         <!-- Spring 框架 -->
         <dependency>
